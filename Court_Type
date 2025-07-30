@@ -1,0 +1,9 @@
+//This expression is for labeling English and Spanish courts for the Mesa Parks and Recreation data.
+var eng_court = DomainName($feature, 'COURT_TYPE')
+var esp_court = DomainName($feature, 'COURT_TYPE_SPANISH')
+//Splits each word of the English court type into an array.
+var eng_court_array = split(eng_court,' ',-1)
+//Assigns a variable for the first word of the string for the English court type.
+var eng_court_first = eng_court_array[0]
+//Returns the first word of the string for the English court type.
+return(eng_court_first+' / '+esp_court)
