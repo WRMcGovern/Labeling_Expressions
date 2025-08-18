@@ -1,0 +1,20 @@
+var phase = $feature['Cemetery_Section.Phase']
+
+// Only show acres if phase is not "Previous Expansion Phase"
+var acresText = IIf(
+    phase != "Previous Expansion Phase", 
+    Round($feature['Cemetery_Section.Acres'], 2) + " Acres" + TextFormatting.NewLine, 
+    ""
+)
+
+var sfText = $feature['Cemetery_Section.Building_SF']
+
+// If Building_SF is null, show Facility Name + acres
+if (IsEmpty(sfText)) {
+    return $feature['gis_PARKS.PARKS.pkCemetery.Facility_Name'] + 
+           TextFormatting.NewLine + 
+           acresText
+} else {
+    return $feature['gis_PARKS.PARKS.pkCemetery.Facility_Name'] + 
+           TextFormatting.NewLine + sfText + " Square Feet"
+}
