@@ -1,0 +1,7 @@
+var feet = Floor($feature.Shape_Length);
+
+var inches = Round((Abs($feature.Shape_Length) - feet) * 12, 0); 
+
+if ($feature.WIDTH != null) { return $feature.WIDTH + upper('" Wide')+textformatting.newline+feet + "'" + inches + upper('" Long')}
+
+else { return feet + "'" + inches + upper('" Long')}
