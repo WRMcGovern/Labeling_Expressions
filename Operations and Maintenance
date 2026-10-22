@@ -1,0 +1,5 @@
+var Categories = $feature.Categories
+var OneTimeOMCost = Text($feature.one_time_o_m,'#,###.00')
+var OngoingOMCost = Text($feature.ongoing_o_m,'#,###.00')
+
+$feature.Name + textformatting.NewLine + Categories + textformatting.NewLine + "Capital Estimate : $"  + text($feature.F37__Inflation_, '#,###.00') + IIf(IsEmpty(OneTimeOMCost), null,  textformatting.NewLine + "One Time Maintenance Estimate: $" + OneTimeOMCost) + IIf(IsEmpty($feature.ongoing_o_m), null, textformatting.NewLine + "Ongoing Maintenance Estimate: $" + OngoingOMCost)
