@@ -1,0 +1,3 @@
+var Categories = replace($feature['ParkFinalCombinedList10222026.Categories'], "Renovations/Improvements", "Renovations")
+
+$feature['ParkFinalCombinedList10222026.Name'] + textformatting.NewLine + Categories + textformatting.NewLine + iif($feature['L14Study_Area.categories']!= "Irrigation Renovations/Improvements", text($feature['L14Study_Area.sum_estimate__total_apportioned'], "#,###") + " Impacted Residents", null)
