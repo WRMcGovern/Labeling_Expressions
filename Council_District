@@ -1,0 +1,6 @@
+var District = right($feature['L0CouncilDistrict.DISTRICTS'],1)
+
+if (!isempty($feature['CBGsMaricopaPinal2__Dissolve.SUM_CBGsMaricopaPinal2_Intersect_Estimate__Total_Apportioned'])) {
+return "<BOL>" + "District " + District + "</BOL>" + TextFormatting.NewLine + text($feature['CBGsMaricopaPinal2__Dissolve.SUM_CBGsMaricopaPinal2_Intersect_Estimate__Total_Apportioned'], '#,###') + " Impacted Residents"}
+else {
+return "<BOL>" + "District " + District + "</BOL>"}
